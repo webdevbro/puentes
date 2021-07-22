@@ -110,13 +110,24 @@
   opacity: 0.6;
 }
 
-/* Section 1
-	 * --------------------------------------- */
+/* ALL */
 
-.logoIntroCont {
-}
 .logoIntro img {
   max-width: 300px;
+}
+.logoPages img {
+  height: 180px;
+}
+
+.navIconContainer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20%;
+}
+.navIcon {
+  /* transform: rotate(180deg); */
+  font-size: 4rem;
 }
 
 /* Section 2
@@ -169,20 +180,22 @@
   text-align: left;
 }
 
-.section1 {
-  background-image: url("../assets/img/bg/puentesbg3.jpg");
+.section2 {
+  background-image: url("../assets/img/bg/bg-proyecto.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
 }
-.section3 {
-  background-image: url("../assets/img/bg/puentesbg2.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
-}
+
 .section4 {
-  background-image: url("../assets/img/bg/puentesbg4.jpg");
+  background-image: url("../assets/img/bg/bg-modelo.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.section6 {
+  background-image: url("../assets/img/bg/bg-noticias.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;

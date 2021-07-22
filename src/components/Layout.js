@@ -15,10 +15,13 @@ import {
 } from "@material-ui/core";
 import BookOutlinedIcon from "@material-ui/icons/BookOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
+import LocalLibraryOutlinedIcon from "@material-ui/icons/LocalLibraryOutlined";
+import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
+import ArtTrackOutlinedIcon from "@material-ui/icons/ArtTrackOutlined";
+import BarChartOutlinedIcon from "@material-ui/icons/BarChartOutlined";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import MenuIcon from "@material-ui/icons/Menu";
-import { indigo, grey, deepPurple } from "@material-ui/core/colors";
+import { green } from "@material-ui/core/colors";
 
 import { useHistory, useLocation } from "react-router-dom";
 
@@ -39,7 +42,7 @@ const useStyles = makeStyles((theme) => {
       /* padding: theme.spacing(3), */
     },
     appbar: {
-      backgroundColor: deepPurple[500],
+      backgroundColor: green[500],
     },
     title: {
       padding: theme.spacing(2),
@@ -61,7 +64,7 @@ const useStyles = makeStyles((theme) => {
     },
     toolbar: theme.mixins.toolbar,
     listicon: {
-      color: indigo[500],
+      color: green[600],
     },
     drawerMain: {
       zIndex: "3000",
@@ -73,7 +76,7 @@ const useStyles = makeStyles((theme) => {
       zIndex: "80",
     },
     iconbutton: {
-      color: indigo[600],
+      color: green[600],
     },
 
     navright: {
@@ -110,20 +113,40 @@ const Layout = ({ children }) => {
 
   const menuItems = [
     {
-      text: "Blog",
+      text: "Puentes",
       icon: <BookOutlinedIcon />,
-      path: "/blog",
+      path: "/",
     },
     {
-      text: "Portfolio",
+      text: "El Proyecto",
       icon: <WorkOutlineOutlinedIcon />,
-      path: "/portfolio",
+      path: "/proyecto",
+    },
+    {
+      text: "Historias",
+      icon: <LocalLibraryOutlinedIcon />,
+      path: "/historias",
+    },
+    {
+      text: "El Modelo",
+      icon: <DashboardOutlinedIcon />,
+      path: "/modelo",
+    },
+    {
+      text: "Resultados",
+      icon: <BarChartOutlinedIcon />,
+      path: "/resultados",
+    },
+    {
+      text: "Noticias",
+      icon: <ArtTrackOutlinedIcon />,
+      path: "/noticias",
     },
   ];
   const anchor = "right";
   const history = useHistory();
   const location = useLocation();
-  const openDrawerColor = indigo["700"];
+  const openDrawerColor = green["700"];
   return (
     <div>
       <>

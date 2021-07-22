@@ -25,38 +25,15 @@ body {
   backface-visibility: hidden;
 }
 .pp-easing {
-  -webkit-transition: all 1000ms
-    cubic-bezier(0.55, 0.085, 0, 0.99);
-  -moz-transition: all 1000ms
-    cubic-bezier(0.55, 0.085, 0, 0.99);
-  -o-transition: all 1000ms
-    cubic-bezier(0.55, 0.085, 0, 0.99);
+  -webkit-transition: all 1000ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  -moz-transition: all 1000ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  -o-transition: all 1000ms cubic-bezier(0.55, 0.085, 0, 0.99);
   transition: all 1000ms cubic-bezier(0.55, 0.085, 0, 0.99);
   /* custom */
-  -webkit-transition-timing-function: cubic-bezier(
-    0.55,
-    0.085,
-    0,
-    0.99
-  );
-  -moz-transition-timing-function: cubic-bezier(
-    0.55,
-    0.085,
-    0,
-    0.99
-  );
-  -o-transition-timing-function: cubic-bezier(
-    0.55,
-    0.085,
-    0,
-    0.99
-  );
-  transition-timing-function: cubic-bezier(
-    0.55,
-    0.085,
-    0,
-    0.99
-  );
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  -moz-transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  -o-transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
   /* custom */
 }
 #pp-nav {
@@ -140,7 +117,7 @@ body {
   top: -2px;
   color: #fff;
   font-size: 14px;
-  font-family: arial, helvetica, sans-serif;
+  font-family: "Tajawal", sans-serif;
   white-space: nowrap;
   max-width: 220px;
 }

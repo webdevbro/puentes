@@ -1,0 +1,7 @@
+.halfimage {
+  background-image: url("../assets/img/old/bg-modelo.jpg");
+  background-repeat: no-repeat;
+  background-color: #000000;
+  background-size: cover;
+  background-position: center;
+}
