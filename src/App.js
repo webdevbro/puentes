@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Fullpage from "./pages/Fullpage";
 import Proyecto from "./pages/Proyecto";
 import Modelo from "./pages/Modelo";
+import Historias from "./pages/Historias";
 import Layout from "./components/Layout";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import { deepPurple, indigo, pink, cyan, teal } from "@material-ui/core/colors";
@@ -39,6 +40,9 @@ const App = () => {
             </Route>
             <Route path="/modelo">
               <Modelo />
+            </Route>
+            <Route path="/historias">
+              <Historias />
             </Route>
           </Switch>
         </Layout>

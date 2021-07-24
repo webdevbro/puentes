@@ -2,10 +2,12 @@ import React from "react";
 import { CssBaseline, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./Proyecto.css";
+import ProyectoText from "../components/ProyectoText";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
+    overflow: "scroll",
   },
   image: {
     backgroundRepeat: "no-repeat",
@@ -61,52 +63,8 @@ const Proyecto = () => {
             El Proyecto
           </Typography>
           <div className={classes.copy}>
-            <Typography
-              paragraph="true"
-              style={{ color: "#fafafa" }}
-              align="justify"
-            >
-              ICCO América Latina, con apoyo del Fondo Internacional de
-              Desarrollo Agrícola (FIDA) implementará durante los próximos 3
-              años un proyecto por 2,3 millones de euros que conectará zonas
-              rurales con urbanas a través de una intervención innovadora que
-              generará empleo, emprendimiento y alimentación saludable para
-              jóvenes, mujeres y campesinos.
-            </Typography>
-            <Typography
-              paragraph="true"
-              style={{ color: "#fafafa" }}
-              align="justify"
-            >
-              En los países donde se implementará el proyecto (Bolivia, Colombia
-              y Honduras), la juventud rural se enfrenta a la exclusión y la
-              desigualdad en el ámbito social y económico (desempleo, acceso
-              limitado a la educación y formación técnica y profesional), así
-              como a graves problemas nutricionales.
-            </Typography>
-            <Typography
-              paragraph="true"
-              style={{ color: "#fafafa" }}
-              align="justify"
-            >
-              El proyecto busca minimizar la brecha histórica y al mismo tiempo
-              permitir mejoras en la calidad de vida de hombres y mujeres
-              campesinas, apoyando el emprendimiento y el rol de los jóvenes
-              como dinamizadores de las cadenas de valor agroalimentarias tanto
-              en origen como en destino, creando mejores y más formas de
-              producción más eficientes, fomentando el consumo saludable y la
-              sensibilización, y aprovechando las potencialidades del
-              agroturismo.
-            </Typography>
-            <Typography
-              paragraph="true"
-              style={{ color: "#fafafa" }}
-              align="justify"
-            >
-              El proyecto también promueve la creación de empleo juvenil y la
-              mejora de los niveles de nutrición de este grupo social y sus
-              entornos fortaleciendo los vínculos urbano-rurales con los
-              sectores de la gastronomía y la hostelería.
+            <Typography className="copy">
+              <ProyectoText paragraph="true" />
             </Typography>
           </div>
         </div>

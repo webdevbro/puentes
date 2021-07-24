@@ -132,16 +132,16 @@ const Layout = ({ children }) => {
       icon: <DashboardOutlinedIcon />,
       path: "/modelo",
     },
-    {
+    /* {
       text: "Resultados",
       icon: <BarChartOutlinedIcon />,
-      path: "/resultados",
+      path: "/#fifthPage",
     },
     {
       text: "Noticias",
       icon: <ArtTrackOutlinedIcon />,
-      path: "/noticias",
-    },
+      path: "/#sixthPage",
+    }, */
   ];
   const anchor = "right";
   const history = useHistory();

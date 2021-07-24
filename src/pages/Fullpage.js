@@ -2,13 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactFullpage from "@fullpage/react-fullpage";
 import TopMenu from "../components/TopMenu";
+import Resultados from "../components/Resultados";
 import Fab from "@material-ui/core/Fab";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import NavigationIcon from "@material-ui/icons/Navigation";
-import HeightIcon from "@material-ui/icons/Height";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
-import MouseIcon from "@material-ui/icons/Mouse";
+
 import PuentesVideo from "../assets/img/bg/bg-puentes.mp4";
 import HistoriasVideo from "../assets/img/bg/bg-historias.mp4";
 import ResultadosVideo from "../assets/img/bg/bg-resultados.mp4";
@@ -154,7 +153,7 @@ const Fullpage = () => (
                     alt="Puentes - Conectando Oportunidades para Jóvenes"
                   />
                 </div>
-                <Link to="/proyecto">
+                <Link to="/historias">
                   <Button
                     variant="contained"
                     size="large"
@@ -249,7 +248,8 @@ const Fullpage = () => (
                     alt="Puentes - Conectando Oportunidades para Jóvenes"
                   />
                 </div>
-                <Link to="/proyecto">
+                <Resultados />
+                {/* <Link to="/proyecto">
                   <Button
                     variant="contained"
                     size="large"
@@ -262,8 +262,8 @@ const Fullpage = () => (
                   >
                     Conoce &nbsp;<strong>más</strong>
                   </Button>
-                </Link>
-                <div className="navIconContainer">
+                </Link> */}
+                {/* <div className="navIconContainer">
                   <Fab
                     variant="extended"
                     style={{ backgroundColor: "#c8e6c998" }}
@@ -271,7 +271,7 @@ const Fullpage = () => (
                   >
                     <ImportExportIcon className="navIcon" />
                   </Fab>
-                </div>
+                </div> */}
               </div>
             </div>
 
