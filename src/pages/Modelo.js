@@ -1,5 +1,5 @@
 import React from "react";
-import { CssBaseline, Grid, Typography } from "@material-ui/core";
+import { CssBaseline, Grid, Typography, Container } from "@material-ui/core";
 import ModeloPuentes from "../assets/img/modelo-puentes.png";
 import { makeStyles } from "@material-ui/core/styles";
 import "./Modelo.css";
@@ -42,22 +42,19 @@ const Proyecto = () => {
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={5} className="halfimage" />
       <Grid
         item
         xs={12}
-        sm={8}
-        md={7}
         elevation={6}
         square
-        style={{ backgroundColor: "#1D5E32" }}
+        style={{ backgroundColor: "#F8F8F8" }}
       >
         <div className={classes.article}>
           <Typography
             component="h1"
             variant="h4"
+            color="textPrimary"
             style={{
-              color: "#fafafa",
               fontWeight: "600",
               textTransform: "uppercase",
             }}
@@ -65,24 +62,27 @@ const Proyecto = () => {
             El Modelo
           </Typography>
           <div className={classes.copy}>
-            <Typography
-              paragraph="true"
-              style={{ color: "#fafafa" }}
-              align="justify"
-            >
-              PUENTES articula las áreas rurales, periurbanas y rurales,
-              generando oportunidades económicas para los actores involucrados.
-              El modelo de intervención será sistematizado para su
-              socialización, inclusión, réplica y ampliación a diversos niveles
-              por parte del FIDA y de otros programas
-            </Typography>
-            <div>
+            <Container maxWidth="sm">
+              <Typography
+                variant="body1"
+                color="textPrimary"
+                paragraph="true"
+                align="justify"
+              >
+                PUENTES articula las áreas rurales, periurbanas y rurales,
+                generando oportunidades económicas para los actores
+                involucrados. El modelo de intervención será sistematizado para
+                su socialización, inclusión, réplica y ampliación a diversos
+                niveles por parte del FIDA y de otros programas
+              </Typography>
+            </Container>
+            <Container maxWidth="md">
               <img
                 src={ModeloPuentes}
                 alt="Modelo - Puentes"
                 className={classes.modeloImg}
               />
-            </div>
+            </Container>
           </div>
         </div>
       </Grid>

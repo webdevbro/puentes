@@ -15,8 +15,8 @@ const YoutubeEmbed = ({ embedId }) => {
         height="400"
         src={`https://www.youtube.com/embed/${embedId}`}
         title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        frameBorder="0"
+        allow="accelerometer; autoPlay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
     </div>

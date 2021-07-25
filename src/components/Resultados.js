@@ -218,7 +218,7 @@ const Resultados = () => {
             className={classes.paperStyles}
           >
             <img
-              src={icon3}
+              src={icon8}
               alt="jóvenes formados"
               className={classes.iconImg}
             />
@@ -240,7 +240,7 @@ const Resultados = () => {
             className={classes.paperStyles}
           >
             <img
-              src={icon3}
+              src={icon9}
               alt="jóvenes formados"
               className={classes.iconImg}
             />

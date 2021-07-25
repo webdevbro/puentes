@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardContent: {
     flexGrow: 1,
-    backgroundColor: "rgba(76, 97, 15, 0.8)",
+    backgroundColor: "rgba(1, 123, 55, 0.8)",
     color: "#FFFFFF",
   },
   cardFooter: {
@@ -38,7 +38,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3];
+const cards = [
+  {
+    id: 1,
+    title:
+      "Conectando mejores oportunidades socio económicas para jóvenes rurales y periurbanos en Bolivia, Colombia y Honduras",
+    image:
+      "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    excerpt:
+      "ICCO América Latina, Manqa, Miga, El Lab, Fundación PT y CASM, con apoyo del Fondo Internacional de Desarrollo Agrícola (FIDA), implementarán durante los próximos 3 años un proyecto por 2,5 millones de dólares...",
+  },
+  {
+    id: 2,
+    title:
+      "Jóvenes Youtubers  Rurales destacan la riqueza del patrimonio alimentario, la producción local y el turismo en Bolivia",
+    image:
+      "https://images.unsplash.com/photo-1599907919219-922e2a6949b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    excerpt:
+      "Con la intención de visibilizar la riqueza del patrimonio alimentario boliviano desde las miradas, experiencias y capacidades de jóvenes rurales, el ‘concurso/taller Youtubers Rurales’ identificó y formó...",
+  },
+  {
+    id: 3,
+    title: "Contexto Proyecto Puentes",
+    image:
+      "https://images.unsplash.com/photo-1610137120828-7813477d2470?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    excerpt:
+      "Según datos del Observatorio Latinoamericano de la Juventud de la CEPAL, el 20% de la población total de América Latina son jóvenes, 31 millones de los cuales viven en zonas rurales, aunque persisten constantes dinámicas...",
+  },
+];
 
 const NoticiasPreview = () => {
   const classes = useStyles();
@@ -47,21 +74,27 @@ const NoticiasPreview = () => {
       <Container className={classes.cardGrid} maxWidth="md">
         <Grid container spacing={4}>
           {cards.map((card) => (
-            <Grid item key={card} xs={12} sm={6} md={4}>
+            <Grid item key={card.id} xs={12} sm={6} md={4}>
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}
-                  image="https://source.unsplash.com/random"
+                  image={card.image}
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Heading
+                  <Typography
+                    gutterBottom
+                    variant="h6"
+                    component="h2"
+                    style={{
+                      lineHeight: "1.1",
+                      marginBottom: "1rem",
+                      fontSize: "1.1rem",
+                    }}
+                  >
+                    {card.title}
                   </Typography>
-                  <Typography>
-                    This is a media card. You can use this section to describe
-                    the content.
-                  </Typography>
+                  <Typography variant="body2">{card.excerpt}</Typography>
                 </CardContent>
                 <CardActions className={classes.cardFooter}>
                   <Button size="medium">Leer</Button>

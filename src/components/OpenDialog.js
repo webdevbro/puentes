@@ -1,22 +1,22 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Button,
-  Dialog,
-  Slide,
-  Typography,
-  Card,
-  CardMedia,
-} from "@material-ui/core";
+import { Button, Dialog, Slide, Typography } from "@material-ui/core";
 
 import YoutubeEmbed from "./YoutubeEmbed";
 
 const useStyles = makeStyles((theme) => {
   return {
-    root: {
-      border: "2px solid lime",
+    root: {},
+    title: {
+      color: "#f8f8f8",
+      fontWeight: "bold",
     },
-    title: {},
+    historiasButton: {
+      backgroundColor: "#4caf50",
+      color: "#FFFFFF",
+      marginTop: "1rem",
+      padding: "11px 22px 5px",
+    },
   };
 });
 
@@ -24,7 +24,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const OpenDialog = () => {
+const OpenDialog = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
@@ -36,12 +36,20 @@ const OpenDialog = () => {
 
   return (
     <>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open full-screen dialog
+      <Typography variant="h4" className={classes.title}>
+        {props.title}
+      </Typography>
+      <Button
+        variant="contained"
+        color="secondary"
+        className={classes.historiasButton}
+        onClick={handleClickOpen}
+      >
+        Ir a la historia
       </Button>
       <Dialog
-        fullWidth="100%"
-        maxWidth="100%"
+        fullWidth={true}
+        maxWidth={false}
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
@@ -57,7 +65,7 @@ const OpenDialog = () => {
           <CloseIcon />
         </IconButton> */}
         <div className={classes.root}>
-          <YoutubeEmbed embedId="WxIRFf-u_Bs" />
+          <YoutubeEmbed embedId={props.embedId} />
         </div>
       </Dialog>
     </>

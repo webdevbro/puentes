@@ -19,13 +19,16 @@ const Historias = () => (
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
-            {/* SECTION 2 - EL PROYECTO */}
+            {/* HISTORIA 1 */}
             <div
-              className="section section2"
+              className="section section10"
               style={{ backgroundColor: "#000000" }}
             >
-              <div className="logoIntroCont">
-                <OpenDialog />
+              <div className="historiaCont">
+                <OpenDialog
+                  embedId="ycYewhiaVBk?rel=0"
+                  title="1. Nombre de la historia"
+                />
                 <div className="navIconContainer">
                   <Fab
                     variant="extended"
@@ -34,6 +37,50 @@ const Historias = () => (
                   >
                     <ImportExportIcon className="navIcon" />
                   </Fab>
+                </div>
+              </div>
+            </div>
+
+            {/* HISTORIA 2*/}
+            <div
+              className="section section11"
+              style={{ backgroundColor: "#000000" }}
+            >
+              <div className="historiaCont">
+                <OpenDialog
+                  embedId="2r2bbvtyx3o?rel=0"
+                  title="2. Nombre de la historia"
+                />
+                <div className="navIconContainer">
+                  <Fab
+                    variant="extended"
+                    style={{ backgroundColor: "#c8e6c998" }}
+                    onClick={() => fullpageApi.moveSectionDown()}
+                  >
+                    <ImportExportIcon className="navIcon" />
+                  </Fab>
+                </div>
+              </div>
+            </div>
+
+            {/* HISTORIA 3*/}
+            <div
+              className="section section12"
+              style={{ backgroundColor: "#000000" }}
+            >
+              <div className="historiaCont">
+                <OpenDialog
+                  embedId="AdHJurX0yVA?rel=0"
+                  title="3. Nombre de la historia"
+                />
+                <div className="navIconContainer">
+                  {/* <Fab
+                    variant="extended"
+                    style={{ backgroundColor: "#c8e6c998" }}
+                    onClick={() => fullpageApi.moveSectionDown()}
+                  >
+                    <ImportExportIcon className="navIcon" />
+                  </Fab> */}
                 </div>
               </div>
             </div>

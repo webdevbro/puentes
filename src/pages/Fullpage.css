@@ -205,3 +205,28 @@
 .fp-slidesNav ul li a span {
   background: #ffffff;
 }
+
+/* HISTORIAS */
+.historiaCont {
+  display: block;
+  margin: 0px auto !important;
+}
+
+.section10 {
+  background-image: url("../assets/img/oldbg/puentesbg4.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+.section11 {
+  background-image: url("../assets/img/oldbg/puentesbg2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+.section12 {
+  background-image: url("../assets/img/oldbg/puentesbg3.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}

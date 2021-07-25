@@ -6,13 +6,13 @@ import Modelo from "./pages/Modelo";
 import Historias from "./pages/Historias";
 import Layout from "./components/Layout";
 import { createTheme, ThemeProvider } from "@material-ui/core";
-import { deepPurple, indigo, pink, cyan, teal } from "@material-ui/core/colors";
+import { green, indigo, pink, cyan, teal } from "@material-ui/core/colors";
 import "./App.css";
 
 const theme = createTheme({
   palette: {
     primary: indigo,
-    secondary: deepPurple,
+    secondary: green,
     info: cyan,
     warning: pink,
     success: teal,
