@@ -8,33 +8,13 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { green, purple } from "@material-ui/core/colors";
+import "./NoticiasPreview.css";
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: "transparent",
-  },
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
-    backgroundColor: "rgba(1, 123, 55, 0.8)",
-    color: "#FFFFFF",
-  },
-  cardFooter: {
-    backgroundColor: "rgba(255, 255, 255, 0.5)",
-    justifyContent: "center",
-  },
-  cta: {
-    backgroundColor: { green },
+    paddingRight: theme.spacing(2),
   },
 }));
 
@@ -74,14 +54,14 @@ const NoticiasPreview = () => {
       <Container className={classes.cardGrid} maxWidth="md">
         <Grid container spacing={4}>
           {cards.map((card) => (
-            <Grid item key={card.id} xs={12} sm={6} md={4}>
-              <Card className={classes.card}>
+            <Grid item key={card.id} sm={6} md={4} lg={4}>
+              <Card className="card">
                 <CardMedia
-                  className={classes.cardMedia}
+                  className="cardMedia"
                   image={card.image}
                   title="Image title"
                 />
-                <CardContent className={classes.cardContent}>
+                <CardContent className="cardContent">
                   <Typography
                     gutterBottom
                     variant="h6"
@@ -96,7 +76,7 @@ const NoticiasPreview = () => {
                   </Typography>
                   <Typography variant="body2">{card.excerpt}</Typography>
                 </CardContent>
-                <CardActions className={classes.cardFooter}>
+                <CardActions className="cardFooter">
                   <Button size="medium">Leer</Button>
                 </CardActions>
               </Card>

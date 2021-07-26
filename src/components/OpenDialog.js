@@ -1,22 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Dialog, Slide, Typography } from "@material-ui/core";
-
 import YoutubeEmbed from "./YoutubeEmbed";
+import "./OpenDialog.css";
 
 const useStyles = makeStyles((theme) => {
   return {
     root: {},
-    title: {
-      color: "#f8f8f8",
-      fontWeight: "bold",
-    },
-    historiasButton: {
-      backgroundColor: "#4caf50",
-      color: "#FFFFFF",
-      marginTop: "1rem",
-      padding: "11px 22px 5px",
-    },
   };
 });
 
@@ -36,13 +26,16 @@ const OpenDialog = (props) => {
 
   return (
     <>
-      <Typography variant="h4" className={classes.title}>
+      <Typography variant="h4" className="historiasTitle">
         {props.title}
+      </Typography>
+      <Typography variant="body1" className="desc">
+        {props.desc}
       </Typography>
       <Button
         variant="contained"
         color="secondary"
-        className={classes.historiasButton}
+        className="historiasButton"
         onClick={handleClickOpen}
       >
         Ir a la historia

@@ -7,6 +7,7 @@ import "./Modelo.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
+    overflow: "scroll",
   },
   image: {
     backgroundRepeat: "no-repeat",

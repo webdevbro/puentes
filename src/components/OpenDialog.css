@@ -1,0 +1,61 @@
+.historiasTitle {
+  color: #f8f8f8;
+  margin-bottom: 20px !important;
+  font-weight: bold !important;
+  font-size: 1.6rem !important;
+}
+.desc {
+  color: #f8f8f8;
+  font-weight: bold;
+  max-width: 350px !important;
+  margin: 0px auto 20px !important;
+}
+.historiasButton {
+  background-color: #4caf50 !important;
+  color: #ffffff !important;
+  margin-top: 1rem !important;
+  padding: 11px 22px 5px !important;
+}
+
+@media (min-width: 600px) {
+  .historiasTitle {
+    color: #f8f8f8 !important;
+    font-weight: bold !important;
+    margin-bottom: 20px !important;
+    font-weight: bold !important;
+    font-size: 1.8rem !important;
+  }
+  .desc {
+    color: #f8f8f8;
+    font-weight: bold !important;
+    max-width: 500px !important;
+    margin: 0px auto 20px !important;
+  }
+  .historiasButton {
+    background-color: #4caf50 !important;
+    color: #ffffff !important;
+    margin-top: 1rem !important;
+    padding: 11px 22px 5px !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .historiasTitle {
+    color: #f8f8f8 !important;
+    font-weight: bold !important;
+    font-size: 2.2rem !important;
+  }
+  .desc {
+    color: #f8f8f8 !important;
+    font-weight: bold !important;
+    font-size: 1.2rem !important;
+    max-width: 600px !important;
+    margin: 0px auto 30px !important;
+  }
+  .historiasButton {
+    background-color: #4caf50 !important;
+    color: #ffffff !important;
+    margin-top: 1rem !important;
+    padding: 11px 22px 5px !important;
+  }
+}

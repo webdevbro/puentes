@@ -223,7 +223,7 @@ const Fullpage = () => (
               <video
                 data-autoplay
                 id="myVideo"
-                loop
+                /* loop */
                 muted
                 style={{
                   position: "absolute",
@@ -242,12 +242,21 @@ const Fullpage = () => (
             /> */}
               </video>
               <div className="logoIntroCont">
-                <div className="logoIntro">
+                <div className="logoIntro resultadosLogoIntro">
                   <img
+                    style={{ maxWidth: "250px" }}
                     src={ResultadosLogo}
                     alt="Puentes - Conectando Oportunidades para Jóvenes"
+                    className="imgLogoResultados"
                   />
                 </div>
+                <Typography
+                  variant="h4"
+                  className="onlyTitle"
+                  style={{ lineHeight: "1" }}
+                >
+                  Resultados
+                </Typography>
                 <Resultados />
                 {/* <Link to="/proyecto">
                   <Button
@@ -281,14 +290,20 @@ const Fullpage = () => (
               style={{ backgroundColor: "#000000" }}
             >
               <div className="logoIntroCont">
-                <div className="logoPages">
+                <div className="logoPages noticiasLogo">
                   <img
                     src={NoticiasLogo}
                     alt="Puentes - Conectando Oportunidades para Jóvenes"
                   />
-
-                  <NoticiasPreview />
                 </div>
+                <Typography
+                  variant="h4"
+                  className="onlyTitleNoticias"
+                  style={{ lineHeight: "1" }}
+                >
+                  Noticias
+                </Typography>
+                <NoticiasPreview />
                 {/* <div className="navIconContainer">
                   <Fab
                     variant="extended"

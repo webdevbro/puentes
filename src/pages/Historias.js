@@ -26,8 +26,9 @@ const Historias = () => (
             >
               <div className="historiaCont">
                 <OpenDialog
-                  embedId="ycYewhiaVBk?rel=0"
-                  title="1. Nombre de la historia"
+                  embedId="Tj9ZY-4QmxI?rel=0"
+                  title="Javier Calcina - Jóven Rural Boliviano"
+                  desc="Revaloriza la producción local y ancestral. Promueve una alimentación saludable y es gestor de emprendimientos"
                 />
                 <div className="navIconContainer">
                   <Fab
@@ -48,8 +49,9 @@ const Historias = () => (
             >
               <div className="historiaCont">
                 <OpenDialog
-                  embedId="2r2bbvtyx3o?rel=0"
-                  title="2. Nombre de la historia"
+                  embedId="tvu-ThgY_oQ?rel=0"
+                  title="Jóvenes emprendedoras rurales colombianas"
+                  desc="BAR C.O.T es una iniciativa rural resultado de un proceso de formación en gastronomía y emprendedurismo, liderado por mujeres jóvenes que revalorizan sus productos y creen en su tierra"
                 />
                 <div className="navIconContainer">
                   <Fab
@@ -70,8 +72,9 @@ const Historias = () => (
             >
               <div className="historiaCont">
                 <OpenDialog
-                  embedId="AdHJurX0yVA?rel=0"
-                  title="3. Nombre de la historia"
+                  embedId="9CSewgE4VVU?rel=0"
+                  title="Jóvenes emprendedores gastronómicos"
+                  desc="Miska es un modelo de formación gastronómica y empleo juvenil que ofrece mejores oportunidades de vida a jóvenes centroamericanos"
                 />
                 <div className="navIconContainer">
                   {/* <Fab

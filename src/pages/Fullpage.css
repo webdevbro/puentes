@@ -4,51 +4,6 @@
   text-align: center;
 }
 
-/* Menu
- * --------------------------------------- */
-#menu li {
-  display: inline-block;
-  margin: 10px;
-  color: #000;
-  background: #fff;
-  background: rgba(255, 255, 255, 0.5);
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-#menu li.active {
-  background: #666;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-}
-#menu li a {
-  text-decoration: none;
-  color: #000;
-}
-#menu li.active a:hover {
-  color: #000;
-}
-#menu li:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-#menu li a,
-#menu li.active a {
-  padding: 9px 18px;
-  display: block;
-}
-#menu li.active a {
-  color: #fff;
-}
-#menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 40px;
-  z-index: 70;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
 /* Section 1
  * --------------------------------------- */
 #section1 h1 {
@@ -113,10 +68,41 @@
 /* ALL */
 
 .logoIntro img {
-  max-width: 300px;
+  max-width: 200px !important;
 }
+@media (min-width: 600px) {
+  .logoIntro img {
+    max-width: 200px !important;
+  }
+}
+@media (min-width: 960px) {
+  .logoIntro img {
+    max-width: 300px !important;
+  }
+}
+
 .logoPages img {
-  height: 180px;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+@media (min-width: 600px) {
+  .logoPages img {
+    height: 120px;
+  }
+}
+@media (min-width: 960px) {
+  .logoPages img {
+    height: 180px;
+  }
+}
+/* DOTTED RIGHT NAVIGATION */
+#fp-nav.fp-right {
+  display: none;
+}
+@media (min-width: 600px) {
+  #fp-nav.fp-right {
+    display: block;
+  }
 }
 
 .navIconContainer {
@@ -213,20 +199,65 @@
 }
 
 .section10 {
-  background-image: url("../assets/img/oldbg/puentesbg4.jpg");
+  background-image: url("../assets/img/bg/hist1.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
 }
 .section11 {
-  background-image: url("../assets/img/oldbg/puentesbg2.jpg");
+  background-image: url("../assets/img/bg/hist2.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
 }
 .section12 {
-  background-image: url("../assets/img/oldbg/puentesbg3.jpg");
+  background-image: url("../assets/img/bg/hist3.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
+}
+
+/* Menu
+ * --------------------------------------- */
+#menu li {
+  display: inline-block;
+  margin: 10px;
+  color: #000;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+#menu li.active {
+  background: #666;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+#menu li a {
+  text-decoration: none;
+  color: #000;
+}
+#menu li.active a:hover {
+  color: #000;
+}
+#menu li:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+#menu li a,
+#menu li.active a {
+  padding: 9px 18px;
+  display: block;
+}
+#menu li.active a {
+  color: #fff;
+}
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  z-index: 70;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
