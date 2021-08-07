@@ -47,7 +47,7 @@ const Proyecto = () => {
         md={5}
         elevation={6}
         square
-        style={{ backgroundColor: "#AC5857" }}
+        style={{ backgroundColor: "rgba(1, 123, 55, 1)" }}
       >
         <div className={classes.article}>
           <Typography

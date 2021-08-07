@@ -7,12 +7,10 @@ import Fab from "@material-ui/core/Fab";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
-
 import PuentesVideo from "../assets/img/bg/bg-puentes.mp4";
 import HistoriasVideo from "../assets/img/bg/bg-historias.mp4";
 import ResultadosVideo from "../assets/img/bg/bg-resultados.mp4";
 import PuentesLogo from "../assets/img/puentes-logo-white.png";
-import PuentesLogoSolo from "../assets/img/puentes-logo-solo.png";
 import HistoriasLogo from "../assets/img/png/historias.png";
 import ModeloLogo from "../assets/img/png/modelo.png";
 import NoticiasLogo from "../assets/img/png/noticias.png";
@@ -46,6 +44,7 @@ const Fullpage = () => (
             <div className="section" id="section1">
               <video
                 data-autoplay
+                playsInline
                 id="myVideo"
                 loop
                 muted
@@ -127,6 +126,7 @@ const Fullpage = () => (
             <div className="section" id="section1">
               <video
                 data-autoplay
+                playsInline
                 id="myVideo"
                 loop
                 muted
@@ -222,8 +222,9 @@ const Fullpage = () => (
             <div className="section" id="section1">
               <video
                 data-autoplay
+                playsInline
                 id="myVideo"
-                /* loop */
+                loop
                 muted
                 style={{
                   position: "absolute",
@@ -296,6 +297,20 @@ const Fullpage = () => (
                     alt="Puentes - Conectando Oportunidades para Jóvenes"
                   />
                 </div>
+                <Link to="/noticias">
+                  <Button
+                    variant="contained"
+                    size="large"
+                    style={{
+                      backgroundColor: "#4caf50",
+                      color: "#FFFFFF",
+                      marginTop: "1rem",
+                      padding: "11px 22px 5px",
+                    }}
+                  >
+                    Blog de &nbsp;<strong>noticias</strong>
+                  </Button>
+                </Link>
                 <Typography
                   variant="h4"
                   className="onlyTitleNoticias"

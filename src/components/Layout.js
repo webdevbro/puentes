@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 /* import NavBar from "./NavBar"; */
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -8,17 +7,13 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Typography,
   IconButton,
-  Divider,
-  Container,
 } from "@material-ui/core";
 import BookOutlinedIcon from "@material-ui/icons/BookOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
 import LocalLibraryOutlinedIcon from "@material-ui/icons/LocalLibraryOutlined";
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
 import ArtTrackOutlinedIcon from "@material-ui/icons/ArtTrackOutlined";
-import BarChartOutlinedIcon from "@material-ui/icons/BarChartOutlined";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { green } from "@material-ui/core/colors";
@@ -132,21 +127,20 @@ const Layout = ({ children }) => {
       icon: <DashboardOutlinedIcon />,
       path: "/modelo",
     },
+    {
+      text: "Noticias",
+      icon: <ArtTrackOutlinedIcon />,
+      path: "/noticias",
+    },
     /* {
       text: "Resultados",
       icon: <BarChartOutlinedIcon />,
       path: "/#fifthPage",
-    },
-    {
-      text: "Noticias",
-      icon: <ArtTrackOutlinedIcon />,
-      path: "/#sixthPage",
     }, */
   ];
   const anchor = "right";
   const history = useHistory();
   const location = useLocation();
-  const openDrawerColor = green["700"];
   return (
     <div>
       <>
