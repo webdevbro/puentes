@@ -6,6 +6,7 @@ import Modelo from "./pages/Modelo";
 import Historias from "./pages/Historias";
 import Noticias from "./pages/Noticias";
 import NoticiasSingle from "./pages/NoticiasSingle";
+import Category from "./pages/Category";
 import Layout from "./components/Layout";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import { green, indigo, pink, cyan, teal } from "@material-ui/core/colors";
@@ -49,8 +50,11 @@ const App = () => {
             <Route path="/noticias">
               <Noticias />
             </Route>
-            <Route path="/noticias-single">
+            <Route path="/noticias/:id">
               <NoticiasSingle />
+            </Route>
+            <Route path="/category/:id">
+              <Category />
             </Route>
           </Switch>
         </Layout>

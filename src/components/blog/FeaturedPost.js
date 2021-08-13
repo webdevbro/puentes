@@ -14,18 +14,21 @@ import {
 const useStyles = makeStyles({
   card: {
     display: "flex",
+    flex: 1,
   },
   cardDetails: {
     flex: 1,
   },
   cardMedia: {
-    width: 180,
+    /* width: 180, */
+    minWidth: "180px",
+    height: "200px",
   },
 });
 
 const FeaturedPost = (props) => {
   const classes = useStyles();
-  const { post } = props;
+  const { article } = props;
 
   return (
     <Grid item xs={12} md={6}>
@@ -34,24 +37,24 @@ const FeaturedPost = (props) => {
           <div className={classes.cardDetails}>
             <CardContent>
               <Typography component="h2" variant="h5">
-                {post.title}
+                {article.title}
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
-                {post.date}
+                {article.published_at}
               </Typography>
               <Typography variant="subtitle1" paragraph>
-                {post.description}
+                {article.excerpt}
               </Typography>
               <Typography variant="subtitle1" color="primary">
-                Continue reading...
+                Leer más...
               </Typography>
             </CardContent>
           </div>
           <Hidden xsDown>
             <CardMedia
               className={classes.cardMedia}
-              image={post.image}
-              title={post.imageTitle}
+              image={article.featimage.url}
+              title={article.title}
             />
           </Hidden>
         </Card>

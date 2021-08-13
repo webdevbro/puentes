@@ -108,7 +108,7 @@ const Layout = ({ children }) => {
 
   const menuItems = [
     {
-      text: "Puentes",
+      text: "Inicio",
       icon: <BookOutlinedIcon />,
       path: "/",
     },

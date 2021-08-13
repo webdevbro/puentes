@@ -1,10 +1,11 @@
+import ContactDialog from "./ContactDialog";
 import "./TopMenu.css";
 
 const TopMenu = () => {
   return (
     <ul id="menu" className="topMenu">
       <li data-menuanchor="firstPage" className="active">
-        <a href="#firstPage">Puentes</a>
+        <a href="#firstPage">Inicio</a>
       </li>
       <li data-menuanchor="secondPage">
         <a href="#secondPage">El Proyecto</a>
@@ -20,6 +21,9 @@ const TopMenu = () => {
       </li>
       <li data-menuanchor="sixthPage">
         <a href="#sixthPage">Noticias</a>
+      </li>
+      <li>
+        <ContactDialog />
       </li>
     </ul>
   );

@@ -88,8 +88,6 @@ const featuredPosts = [
 const Noticias = () => {
   const url = "http://localhost:1337/articles";
   const { loading, error, data } = useFetch(url);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
   return (
     <React.Fragment>
       <CssBaseline />
@@ -98,10 +96,9 @@ const Noticias = () => {
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
-            {data.map((article) => {
-              return <FeaturedPost key={article.id} article={article} />;
+            {featuredPosts.map((post) => {
+              return <FeaturedPost key={post.id} post={post} />;
             })}
-            {console.log(data)}
           </Grid>
         </main>
       </Container>
