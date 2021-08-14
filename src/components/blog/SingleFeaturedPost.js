@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Typography, Grid, Link } from "@material-ui/core";
-import NoticiasBackImage from "../../assets/img/oldbg/puentesbg2.jpg";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -35,21 +34,17 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
-const MainFeaturedPost = (props) => {
+const SingleFeaturedPost = (props) => {
   const classes = useStyles();
-
+  const { data } = props;
   return (
     <Paper
       className={classes.mainFeaturedPost}
       style={{
-        backgroundImage: `url(${NoticiasBackImage})`,
+        backgroundImage: `url(${data.featimage.url})`,
       }}
     >
-      <img
-        /* src={props.article.featimage} */
-        alt="test"
-        style={{ display: "none" }}
-      />
+      <img src={data.featimage.url} alt="test" style={{ display: "none" }} />
       <div className={classes.overlay}></div>
       <Grid container>
         <Grid item md={7}>
@@ -60,10 +55,10 @@ const MainFeaturedPost = (props) => {
               color="inherit"
               gutterBottom
             >
-              Blog de Noticias
+              {data.title}
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              Noticias actuales e interesantes de nuestro proyecto
+              {data.excerpt}
             </Typography>
           </div>
         </Grid>
@@ -72,8 +67,8 @@ const MainFeaturedPost = (props) => {
   );
 };
 
-export default MainFeaturedPost;
+export default SingleFeaturedPost;
 
-MainFeaturedPost.propTypes = {
+SingleFeaturedPost.propTypes = {
   post: PropTypes.object,
 };

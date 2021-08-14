@@ -5,23 +5,18 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 
 export default function Main(props) {
-  const { posts, title } = props;
+  const { article } = props;
 
   return (
     <Grid item xs={12} md={8}>
       <Typography variant="h6" gutterBottom>
-        {title}
+        {article.title}
       </Typography>
+      <Typography variant="h6" gutterBottom></Typography>
       <Divider />
-      {posts.map((post) => (
-        <Typography
-          key={post.id}
-          paragraph
-          style={{ marginTop: "2rem", textAlign: "justify" }}
-        >
-          {post.text}
-        </Typography>
-      ))}
+      <Typography paragraph style={{ marginTop: "2rem", textAlign: "justify" }}>
+        {article.body}
+      </Typography>
     </Grid>
   );
 }

@@ -1,12 +1,32 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import useFetch from "../hooks/useFetch";
-import { CssBaseline, Grid, Container } from "@material-ui/core";
+import {
+  CssBaseline,
+  Grid,
+  Container,
+  CircularProgress,
+} from "@material-ui/core";
 import Header from "../components/blog/Header";
 import MainFeaturedPost from "../components/blog/MainFeaturedPost";
 import FeaturedPost from "../components/blog/FeaturedPost";
 import Footer from "../components/blog/Footer";
 
 import "./Noticias.css";
+
+const useStyles = makeStyles((theme) => {
+  return {
+    root: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      paddingTop: "6rem",
+      "& > * + *": {
+        marginLeft: theme.spacing(2),
+      },
+    },
+  };
+});
 
 const sections = [
   { title: "Technology", url: "#" },
@@ -28,67 +48,17 @@ const mainFeaturedPost = {
   imgText: "main image description",
   linkText: "Continue reading",
 };
-const featuredPosts = [
-  {
-    id: 1,
-    title: "Featured post",
-    date: "Nov 12",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: "https://source.unsplash.com/random",
-    imageText: "Image Text",
-  },
-  {
-    id: 2,
-    title: "Another cool post",
-    date: "Ago 5",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: "https://source.unsplash.com/random",
-    imageText: "Image Text",
-  },
-  {
-    id: 3,
-    title: "Another cool post",
-    date: "Sep 11",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: "https://source.unsplash.com/random",
-    imageText: "Image Text",
-  },
-  {
-    id: 4,
-    title: "Third cool post",
-    date: "Oct 23",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: "https://source.unsplash.com/random",
-    imageText: "Image Text",
-  },
-  {
-    id: 5,
-    title: "Fourth cool post",
-    date: "Dec 18",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: "https://source.unsplash.com/random",
-    imageText: "Image Text",
-  },
-  {
-    id: 6,
-    title: "Tenth cool post",
-    date: "Dec 31",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: "https://source.unsplash.com/random",
-    imageText: "Image Text",
-  },
-];
 
 const Noticias = () => {
+  const classes = useStyles();
   const url = "http://localhost:1337/articles";
   const { loading, error, data } = useFetch(url);
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div className={classes.root}>
+        <CircularProgress color="inherit" />
+      </div>
+    );
   if (error) return <p>Error :(</p>;
   return (
     <React.Fragment>
@@ -101,7 +71,6 @@ const Noticias = () => {
             {data.map((article) => {
               return <FeaturedPost key={article.id} article={article} />;
             })}
-            {console.log(data)}
           </Grid>
         </main>
       </Container>

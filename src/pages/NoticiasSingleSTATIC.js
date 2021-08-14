@@ -1,23 +1,17 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  CssBaseline,
-  Grid,
-  Container,
-  Typography,
-  CircularProgress,
-  Paper,
-} from "@material-ui/core";
+import { CssBaseline, Grid, Container } from "@material-ui/core";
 import Header from "../components/blog/Header";
 import Main from "../components/blog/Main";
-import SingleFeaturedPost from "../components/blog/SingleFeaturedPost";
+import MainFeaturedPost from "../components/blog/MainFeaturedPost";
 import Sidebar from "../components/blog/Sidebar";
 import Footer from "../components/blog/Footer";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import post1 from "../components/blog/post1";
+import post2 from "../components/blog/post2";
+import post3 from "../components/blog/post3";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -38,7 +32,15 @@ const sections = [
   { title: "Style", url: "#" },
   { title: "Travel", url: "#" },
 ];
-
+const mainFeaturedPost = {
+  title: "Main Featured Post Goes Here",
+  description:
+    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+  image: "https://source.unsplash.com/random",
+  imgText: "main image description",
+  linkText: "Continue reading",
+};
+const posts = [post1, post2, post3];
 const sidebar = {
   title: "About",
   description:
@@ -65,26 +67,16 @@ const sidebar = {
 
 const NoticiasSingle = () => {
   const classes = useStyles();
-  const { id } = useParams();
-  const singleurl = `http://localhost:1337/articles/${id}`;
-  const { loading, error, data } = useFetch(singleurl);
 
-  if (loading)
-    return (
-      <div className={classes.root}>
-        <CircularProgress color="inherit" />
-      </div>
-    );
-  if (error) return <p>Error :(</p>;
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
         <Header title="Noticias" sections={sections} />
         <main>
-          <SingleFeaturedPost data={data} />
+          <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main article={data} />
+            <Main title="From the firehose" posts={posts} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}

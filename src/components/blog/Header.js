@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Toolbar, Typography, Link } from "@material-ui/core";
+import { Toolbar, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -10,6 +11,14 @@ const useStyles = makeStyles((theme) => {
     },
     toolbarTitle: {
       flex: 1,
+      marginTop: "0.5rem",
+      color: "inherit",
+    },
+    toolbarTitleLink: {
+      textTransform: "uppercase",
+      fontSize: "2.125rem",
+      color: "#000",
+      fontWeight: 500,
     },
     toolbarSecondary: {
       justifyContent: "space-between",
@@ -31,13 +40,14 @@ const Header = (props) => {
       <Toolbar className={classes.toolbar}>
         <Typography
           component="h2"
-          variant="h5"
           color="inherit"
           align="center"
           noWrap
           className={classes.toolbarTitle}
         >
-          {title}
+          <Link to="/noticias" className={classes.toolbarTitleLink}>
+            {title}
+          </Link>
         </Typography>
       </Toolbar>
       <Toolbar
@@ -47,7 +57,7 @@ const Header = (props) => {
       >
         {sections.map((section) => {
           return (
-            <Link
+            <Typography
               color="inherit"
               noWrap
               key={section.title}
@@ -56,7 +66,7 @@ const Header = (props) => {
               className={classes.toolbarLink}
             >
               {section.title}
-            </Link>
+            </Typography>
           );
         })}
       </Toolbar>

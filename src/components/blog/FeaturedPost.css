@@ -1,0 +1,4 @@
+.card-action-area:visited,
+.card-action-area:focus {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
