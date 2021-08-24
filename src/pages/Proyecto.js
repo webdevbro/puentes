@@ -1,5 +1,9 @@
 import React from "react";
-import { CssBaseline, Grid, Typography } from "@material-ui/core";
+import {
+  CssBaseline,
+  Grid,
+  Typography,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./Proyecto.css";
 import ProyectoText from "../components/ProyectoText";
@@ -37,16 +41,25 @@ const Proyecto = () => {
   const classes = useStyles();
 
   return (
-    <Grid container component="main" className={classes.root}>
+    <Grid
+      container
+      component="main"
+      className={classes.root}
+    >
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className="halfimage-proyecto" />
+      <Grid
+        item
+        xs={false}
+        sm={4}
+        md={7}
+        className="halfimage-proyecto"
+      />
       <Grid
         item
         xs={12}
         sm={8}
         md={5}
         elevation={6}
-        square
         style={{ backgroundColor: "rgba(1, 123, 55, 1)" }}
       >
         <div className={classes.article}>
@@ -64,7 +77,7 @@ const Proyecto = () => {
           </Typography>
           <div className={classes.copy}>
             <Typography className="copy">
-              <ProyectoText paragraph="true" />
+              <ProyectoText paragraph={true} />
             </Typography>
           </div>
         </div>

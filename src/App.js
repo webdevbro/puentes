@@ -1,15 +1,29 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import Fullpage from "./pages/Fullpage";
 import Proyecto from "./pages/Proyecto";
 import Modelo from "./pages/Modelo";
+import Contacto from "./pages/Contact";
 import Historias from "./pages/Historias";
 import Noticias from "./pages/Noticias";
 import NoticiasSingle from "./pages/NoticiasSingle";
 import Category from "./pages/Category";
 import Layout from "./components/Layout";
-import { createTheme, ThemeProvider } from "@material-ui/core";
-import { green, indigo, pink, cyan, teal } from "@material-ui/core/colors";
+import {
+  createTheme,
+  ThemeProvider,
+} from "@material-ui/core";
+import {
+  green,
+  indigo,
+  pink,
+  cyan,
+  teal,
+} from "@material-ui/core/colors";
 import "./App.css";
 
 const theme = createTheme({
@@ -43,6 +57,9 @@ const App = () => {
             </Route>
             <Route path="/modelo">
               <Modelo />
+            </Route>
+            <Route path="/contacto">
+              <Contacto />
             </Route>
             <Route path="/historias">
               <Historias />

@@ -1,27 +1,18 @@
 import React from "react";
+import ContactForm from "../components/ContactForm";
 import {
   CssBaseline,
   Grid,
   Typography,
   Container,
+  Paper,
 } from "@material-ui/core";
-import ModeloPuentes from "../assets/img/modelo-puentes.png";
 import { makeStyles } from "@material-ui/core/styles";
-import "./Modelo.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
     overflow: "scroll",
-  },
-  image: {
-    backgroundRepeat: "no-repeat",
-    backgroundColor:
-      theme.palette.type === "light"
-        ? theme.palette.grey[50]
-        : theme.palette.grey[900],
-    backgroundSize: "cover",
-    backgroundPosition: "center",
   },
   article: {
     margin: theme.spacing(8, 4),
@@ -29,20 +20,15 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
-  copy: {
+  pageContent: {
+    margin: theme.spacing(0),
     marginTop: "2rem",
-    padding: "0.5rem",
-  },
-  modeloImg: {
-    maxWidth: "100%",
-    marginTop: "3rem",
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
+    marginBottom: "2rem",
+    padding: theme.spacing(3),
   },
 }));
 
-const Modelo = () => {
+const Contacto = () => {
   const classes = useStyles();
 
   return (
@@ -68,10 +54,14 @@ const Modelo = () => {
               textTransform: "uppercase",
             }}
           >
-            El Modelo
+            Formulario de Contacto
           </Typography>
           <div className={classes.copy}>
             <Container maxWidth="sm">
+              <Paper className={classes.pageContent}>
+                <ContactForm />
+              </Paper>
+
               <Typography
                 variant="body1"
                 color="textPrimary"
@@ -88,13 +78,6 @@ const Modelo = () => {
                 programas
               </Typography>
             </Container>
-            <Container maxWidth="md">
-              <img
-                src={ModeloPuentes}
-                alt="Modelo - Puentes"
-                className={classes.modeloImg}
-              />
-            </Container>
           </div>
         </div>
       </Grid>
@@ -102,4 +85,4 @@ const Modelo = () => {
   );
 };
 
-export default Modelo;
+export default Contacto;

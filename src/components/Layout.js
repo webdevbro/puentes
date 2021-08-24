@@ -14,6 +14,7 @@ import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
 import LocalLibraryOutlinedIcon from "@material-ui/icons/LocalLibraryOutlined";
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
 import ArtTrackOutlinedIcon from "@material-ui/icons/ArtTrackOutlined";
+import MailOutlineOutlinedIcon from "@material-ui/icons/MailOutlineOutlined";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { green } from "@material-ui/core/colors";
@@ -132,6 +133,11 @@ const Layout = ({ children }) => {
       icon: <ArtTrackOutlinedIcon />,
       path: "/noticias",
     },
+    {
+      text: "Contacto",
+      icon: <MailOutlineOutlinedIcon />,
+      path: "/contacto",
+    },
     /* {
       text: "Resultados",
       icon: <BarChartOutlinedIcon />,
@@ -180,10 +186,14 @@ const Layout = ({ children }) => {
                       return history.push(item.path);
                     }}
                     className={
-                      location.pathname === item.path ? classes.active : null
+                      location.pathname === item.path
+                        ? classes.active
+                        : null
                     }
                   >
-                    <ListItemIcon className={classes.listicon}>
+                    <ListItemIcon
+                      className={classes.listicon}
+                    >
                       {item.icon}
                     </ListItemIcon>
                     <ListItemText primary={item.text} />
@@ -198,7 +208,9 @@ const Layout = ({ children }) => {
             className={classes.drawerButton}
             onClick={toggleDrawerWait(anchor, true)}
           >
-            <MoreVertIcon style={{ color: "#DDDDDD", fontSize: "2rem" }} />
+            <MoreVertIcon
+              style={{ color: "#DDDDDD", fontSize: "2rem" }}
+            />
           </IconButton>
 
           {children}
