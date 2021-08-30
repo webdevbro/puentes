@@ -4,6 +4,12 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+} from "@apollo/client";
+
 import Fullpage from "./pages/Fullpage";
 import Proyecto from "./pages/Proyecto";
 import Modelo from "./pages/Modelo";
@@ -43,38 +49,47 @@ const theme = createTheme({
   },
 });
 
+/* APOLLO CLIENT */
+const client = new ApolloClient({
+  uri: "http://localhost:1337/graphql",
+  /* uri: "https://puentesbackend.herokuapp.com/graphql", */
+  cache: new InMemoryCache(),
+});
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Layout>
-          <Switch>
-            <Route exact path="/">
-              <Fullpage />
-            </Route>
-            <Route path="/proyecto">
-              <Proyecto />
-            </Route>
-            <Route path="/modelo">
-              <Modelo />
-            </Route>
-            <Route path="/contacto">
-              <Contacto />
-            </Route>
-            <Route path="/historias">
-              <Historias />
-            </Route>
-            <Route path="/noticias">
-              <Noticias />
-            </Route>
-            <Route path="/noticia/:id">
-              <NoticiasSingle />
-            </Route>
-            <Route path="/category/:id">
-              <Category />
-            </Route>
-          </Switch>
-        </Layout>
+        <ApolloProvider client={client}>
+          <Layout>
+            <Switch>
+              <Route exact path="/">
+                <Fullpage />
+              </Route>
+              <Route path="/proyecto">
+                <Proyecto />
+              </Route>
+              <Route path="/modelo">
+                <Modelo />
+              </Route>
+              <Route path="/contacto">
+                <Contacto />
+              </Route>
+              <Route path="/historias">
+                <Historias />
+              </Route>
+              <Route path="/noticias">
+                <Noticias />
+              </Route>
+              <Route path="/noticia/:id">
+                <NoticiasSingle />
+              </Route>
+              <Route path="/category/:id">
+                <Category />
+              </Route>
+            </Switch>
+          </Layout>
+        </ApolloProvider>
       </Router>
     </ThemeProvider>
   );

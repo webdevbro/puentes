@@ -1,7 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Typography, Grid, Link } from "@material-ui/core";
+import {
+  Paper,
+  Typography,
+  Grid,
+  Link,
+} from "@material-ui/core";
 import NoticiasBackImage from "../../assets/img/oldbg/puentesbg2.jpg";
 
 const useStyles = makeStyles((theme) => {
@@ -37,6 +42,7 @@ const useStyles = makeStyles((theme) => {
 
 const MainFeaturedPost = (props) => {
   const classes = useStyles();
+  const { title } = props;
 
   return (
     <Paper
@@ -60,10 +66,15 @@ const MainFeaturedPost = (props) => {
               color="inherit"
               gutterBottom
             >
-              Blog de Noticias
+              {title}
             </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
-              Noticias actuales e interesantes de nuestro proyecto
+            <Typography
+              variant="h5"
+              color="inherit"
+              paragraph
+            >
+              Noticias actuales e interesantes de nuestro
+              proyecto
             </Typography>
           </div>
         </Grid>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useQuery, gql } from "@apollo/client";
+import useFetch from "../hooks/useFetch";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   CssBaseline,
@@ -26,6 +26,18 @@ const useStyles = makeStyles((theme) => {
     },
   };
 });
+const sections = [
+  { title: "Technology", url: "#" },
+  { title: "Design", url: "#" },
+  { title: "Culture", url: "#" },
+  { title: "Business", url: "#" },
+  { title: "Politics", url: "#" },
+  { title: "Opinion", url: "#" },
+  { title: "Science", url: "#" },
+  { title: "Health", url: "#" },
+  { title: "Style", url: "#" },
+  { title: "Travel", url: "#" },
+];
 
 const sidebar = {
   title: "About",
@@ -51,29 +63,11 @@ const sidebar = {
   ],
 };
 
-/* GRAPHQL QUERY */
-
-const ARTICLE = gql`
-  query GetReview($id: ID!) {
-    article(id: $id) {
-      id
-      title
-      body
-      featimage {
-        url
-      }
-    }
-  }
-`;
-
 const NoticiasSingle = () => {
   const classes = useStyles();
   const { id } = useParams();
-  const { loading, error, data } = useQuery(ARTICLE, {
-    variables: {
-      id: id,
-    },
-  });
+  const singleurl = `http://localhost:1337/articles/${id}`;
+  const { loading, error, data } = useFetch(singleurl);
 
   if (loading)
     return (
@@ -86,15 +80,11 @@ const NoticiasSingle = () => {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Noticias" />
+        <Header title="Noticias" sections={sections} />
         <main>
-          <SingleFeaturedPost data={data.article} />
-          <Grid
-            container
-            spacing={5}
-            className={classes.mainGrid}
-          >
-            <Main article={data.article} />
+          <SingleFeaturedPost data={data} />
+          <Grid container spacing={5} className={classes.mainGrid}>
+            <Main article={data} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}

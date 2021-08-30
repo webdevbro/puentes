@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { useQuery, gql } from "@apollo/client";
-import { useParams, Link } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 import {
   CssBaseline,
   Grid,
@@ -29,31 +28,18 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
-/* GRAPHQL QUERIES */
-
-const CATEGORY = gql`
-  query GetCategory($id: ID!) {
-    category(id: $id) {
-      id
-      name
-      articles {
-        id
-        title
-        excerpt
-        published_at
-        slug
-        featimage {
-          url
-        }
-        categories {
-          id
-          name
-        }
-      }
-    }
-  }
-`;
-
+const sections = [
+  { title: "Technology", url: "#" },
+  { title: "Design", url: "#" },
+  { title: "Culture", url: "#" },
+  { title: "Business", url: "#" },
+  { title: "Politics", url: "#" },
+  { title: "Opinion", url: "#" },
+  { title: "Science", url: "#" },
+  { title: "Health", url: "#" },
+  { title: "Style", url: "#" },
+  { title: "Travel", url: "#" },
+];
 const mainFeaturedPost = {
   title: "Main Featured Post Goes Here",
   description:
@@ -63,13 +49,10 @@ const mainFeaturedPost = {
   linkText: "Continue reading",
 };
 
-const Category = () => {
-  const { id } = useParams();
+const Noticias = () => {
   const classes = useStyles();
-  /* query data */
-  const { loading, error, data } = useQuery(CATEGORY, {
-    variables: { id: id },
-  });
+  const url = "http://localhost:1337/articles";
+  const { loading, error, data } = useFetch(url);
   if (loading)
     return (
       <div className={classes.root}>
@@ -77,25 +60,16 @@ const Category = () => {
       </div>
     );
   if (error) return <p>Error :(</p>;
-  //console.log(data);
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Noticias" />
+        <Header title="Noticias" sections={sections} />
         <main>
-          <MainFeaturedPost
-            post={mainFeaturedPost}
-            title={`Noticias de ${data.category.name}`}
-          />
+          <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
-            {data.category.articles.map((article) => {
-              return (
-                <FeaturedPost
-                  key={article.id}
-                  article={article}
-                />
-              );
+            {data.map((article) => {
+              return <FeaturedPost key={article.id} article={article} />;
             })}
           </Grid>
         </main>
@@ -108,4 +82,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default Noticias;

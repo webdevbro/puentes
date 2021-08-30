@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import useFetch from "../hooks/useFetch";
+import { useQuery, gql } from "@apollo/client";
 import {
   CssBaseline,
   Grid,
@@ -49,10 +49,27 @@ const mainFeaturedPost = {
   linkText: "Continue reading",
 };
 
+/* GRAPHQL QUERY */
+const ARTICLES = gql`
+  query GetArticles {
+    articles {
+      id
+      title
+      excerpt
+      published_at
+      slug
+      featimage {
+        url
+      }
+    }
+  }
+`;
+
 const Noticias = () => {
   const classes = useStyles();
-  const url = "http://localhost:1337/articles";
-  const { loading, error, data } = useFetch(url);
+  /* query data */
+  const { loading, error, data } = useQuery(ARTICLES);
+
   if (loading)
     return (
       <div className={classes.root}>
@@ -60,16 +77,25 @@ const Noticias = () => {
       </div>
     );
   if (error) return <p>Error :(</p>;
+  console.log(data);
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
         <Header title="Noticias" sections={sections} />
         <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
+          <MainFeaturedPost
+            post={mainFeaturedPost}
+            title="Blog de Noticias"
+          />
           <Grid container spacing={4}>
-            {data.map((article) => {
-              return <FeaturedPost key={article.id} article={article} />;
+            {data.articles.map((article) => {
+              return (
+                <FeaturedPost
+                  key={article.id}
+                  article={article}
+                />
+              );
             })}
           </Grid>
         </main>

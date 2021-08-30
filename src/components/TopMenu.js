@@ -1,4 +1,5 @@
 import ContactDialog from "./ContactDialog";
+import { Link } from "react-router-dom";
 import "./TopMenu.css";
 
 const TopMenu = () => {
@@ -23,7 +24,8 @@ const TopMenu = () => {
         <a href="#sixthPage">Noticias</a>
       </li>
       <li>
-        <ContactDialog />
+        <Link to="/contacto">Contacto</Link>
+        {/* <ContactDialog /> */}
       </li>
     </ul>
   );

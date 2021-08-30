@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => {
     },
     page: {
       width: "100%",
+      minHeight: "100vh",
       /* padding: theme.spacing(3), */
     },
     appbar: {

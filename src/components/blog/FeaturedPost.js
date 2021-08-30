@@ -42,7 +42,10 @@ const FeaturedPost = (props) => {
                 <Typography component="h2" variant="h5">
                   {article.title}
                 </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
+                <Typography
+                  variant="subtitle1"
+                  color="textSecondary"
+                >
                   {article.published_at}
                 </Typography>
                 <Typography variant="subtitle1" paragraph>
