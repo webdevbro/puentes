@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => {
       textTransform: "uppercase",
       fontSize: "2rem",
       fontWeight: 600,
-      color: "rgba(0, 0, 0, 0.87)",
+      /* color: "rgba(0, 0, 0, 0.87)", */
+      color: "#017B39",
     },
     toolbarSecondary: {
       justifyContent: "space-around",

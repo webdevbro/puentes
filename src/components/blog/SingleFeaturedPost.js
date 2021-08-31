@@ -1,7 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Typography, Grid, Link } from "@material-ui/core";
+import {
+  Paper,
+  Typography,
+  Grid,
+  Link,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -14,6 +19,7 @@ const useStyles = makeStyles((theme) => {
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       backgroundPosition: "center",
+      minHeight: "380px",
     },
     overlay: {
       position: "absolute",
@@ -44,7 +50,11 @@ const SingleFeaturedPost = (props) => {
         backgroundImage: `url(${data.featimage.url})`,
       }}
     >
-      <img src={data.featimage.url} alt="test" style={{ display: "none" }} />
+      <img
+        src={data.featimage.url}
+        alt="test"
+        style={{ display: "none" }}
+      />
       <div className={classes.overlay}></div>
       <Grid container>
         <Grid item md={7}>
@@ -57,7 +67,11 @@ const SingleFeaturedPost = (props) => {
             >
               {data.title}
             </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
+            <Typography
+              variant="h5"
+              color="inherit"
+              paragraph
+            >
               {data.excerpt}
             </Typography>
           </div>
