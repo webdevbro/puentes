@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { makeStyles } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
 import { useForm, Form } from "../components/useForm";
 import InputComp from "./controls/InputComp";
 import ButtonComp from "./controls/ButtonComp";
@@ -16,6 +17,11 @@ const useStyles = makeStyles((theme) => {
       display: "flex",
       justifyContent: "flex-end",
       marginTop: "2rem",
+    },
+    btnStyles: {
+      color: "#FFFFFF",
+      padding: "11px 20px 5px",
+      marginLeft: "1rem",
     },
   };
 });
@@ -118,13 +124,16 @@ function ContactForm() {
           variant="outlined"
           onClick={resetForm}
         />
-        <ButtonComp
-          text="Enviar Mensaje"
+        <Button
           type="submit"
           color="primary"
           size="large"
           variant="contained"
-        />
+          className={classes.btnStyles}
+          disableElevation
+        >
+          Enviar Mensaje
+        </Button>
       </div>
     </Form>
   );

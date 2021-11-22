@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
+import { useQuery, gql } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   CssBaseline,
@@ -61,14 +61,31 @@ const sidebar = {
   ],
 };
 
-/* REST API QUERY */
+/* GRAPHQL QUERY */
+
+const ARTICLE = gql`
+  query getArticle($slug: String!) {
+    article(slug: $slug) {
+      slug
+      id
+      title
+      body
+      featimage {
+        url
+      }
+    }
+  }
+`;
 
 const NoticiasSingle = () => {
   const classes = useStyles();
   const { slug } = useParams();
-  const { loading, error, data } = useFetch(
-    `https://puentesbackend.herokuapp.com/articles/${slug}`,
-  );
+  console.log(slug);
+  const { loading, error, data } = useQuery(ARTICLE, {
+    variables: {
+      slug: slug,
+    },
+  });
 
   if (loading)
     return (
@@ -77,19 +94,18 @@ const NoticiasSingle = () => {
       </div>
     );
   if (error) return <p>Error :(</p>;
-
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Noticias" />
+        <Header title="Noticias Single" />
         <main>
-          <SingleFeaturedPost data={data} />
+          <SingleFeaturedPost data={data.article} />
           <Grid
             container
             spacing={5}
             className={classes.mainGrid}>
-            <Main article={data} />
+            <Main article={data.article} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}

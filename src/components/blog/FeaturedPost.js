@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { format } from "date-fns";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -34,7 +35,7 @@ const FeaturedPost = (props) => {
 
   return (
     <Grid item xs={12} md={6}>
-      <Link to={`/noticia/${article.id}`}>
+      <Link to={`/noticia/${article.slug}`}>
         <CardActionArea className="card-action-area">
           <Card className={classes.card}>
             <div className={classes.cardDetails}>
@@ -44,9 +45,8 @@ const FeaturedPost = (props) => {
                 </Typography>
                 <Typography
                   variant="subtitle1"
-                  color="textSecondary"
-                >
-                  {article.published_at}
+                  color="textSecondary">
+                  {article.createdDate}
                 </Typography>
                 <Typography variant="subtitle1" paragraph>
                   {article.excerpt}

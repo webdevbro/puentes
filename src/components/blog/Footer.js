@@ -15,7 +15,7 @@ const Copyright = () => {
       align="center"
     >
       <Link color="inherit" href="https://puentes.info">
-        puentes.info
+        Derechos Reservados
       </Link>{" "}
       &copy;&nbsp;
       {new Date().getFullYear()}
@@ -50,10 +50,10 @@ const Footer = (props) => {
         <Typography
           variant="subtitle1"
           align="center"
-          color="textSecondary"
+          color="textPrimary"
           component="p"
         >
-          {description}
+          <strong>{description}</strong>
         </Typography>
         <Copyright />
       </Container>

@@ -58,7 +58,10 @@ const Fullpage = () => (
                   zIndex: "-1",
                 }}
               >
-                <source src={PuentesVideo} type="video/mp4" />
+                <source
+                  src={PuentesVideo}
+                  type="video/mp4"
+                />
                 {/* <source
               src="./assets/images/bgpics/flowers.webm"
               type="video/webm"
@@ -74,8 +77,12 @@ const Fullpage = () => (
                 <div className="navIconContainer">
                   <Fab
                     variant="extended"
-                    style={{ backgroundColor: "#c8e6c998" }}
-                    onClick={() => fullpageApi.moveSectionDown()}
+                    style={{
+                      backgroundColor: "#c8e6c998",
+                    }}
+                    onClick={() =>
+                      fullpageApi.moveSectionDown()
+                    }
                   >
                     <ImportExportIcon className="navIcon" />
                   </Fab>
@@ -113,8 +120,12 @@ const Fullpage = () => (
                 <div className="navIconContainer">
                   <Fab
                     variant="extended"
-                    style={{ backgroundColor: "#c8e6c998" }}
-                    onClick={() => fullpageApi.moveSectionDown()}
+                    style={{
+                      backgroundColor: "#c8e6c998",
+                    }}
+                    onClick={() =>
+                      fullpageApi.moveSectionDown()
+                    }
                   >
                     <ImportExportIcon className="navIcon" />
                   </Fab>
@@ -140,7 +151,10 @@ const Fullpage = () => (
                   zIndex: "-1",
                 }}
               >
-                <source src={HistoriasVideo} type="video/mp4" />
+                <source
+                  src={HistoriasVideo}
+                  type="video/mp4"
+                />
                 {/* <source
               src="./assets/images/bgpics/flowers.webm"
               type="video/webm"
@@ -170,8 +184,12 @@ const Fullpage = () => (
                 <div className="navIconContainer">
                   <Fab
                     variant="extended"
-                    style={{ backgroundColor: "#c8e6c998" }}
-                    onClick={() => fullpageApi.moveSectionDown()}
+                    style={{
+                      backgroundColor: "#c8e6c998",
+                    }}
+                    onClick={() =>
+                      fullpageApi.moveSectionDown()
+                    }
                   >
                     <ImportExportIcon className="navIcon" />
                   </Fab>
@@ -209,8 +227,12 @@ const Fullpage = () => (
                 <div className="navIconContainer">
                   <Fab
                     variant="extended"
-                    style={{ backgroundColor: "#c8e6c998" }}
-                    onClick={() => fullpageApi.moveSectionDown()}
+                    style={{
+                      backgroundColor: "#c8e6c998",
+                    }}
+                    onClick={() =>
+                      fullpageApi.moveSectionDown()
+                    }
                   >
                     <ImportExportIcon className="navIcon" />
                   </Fab>
@@ -236,7 +258,10 @@ const Fullpage = () => (
                   zIndex: "-1",
                 }}
               >
-                <source src={ResultadosVideo} type="video/mp4" />
+                <source
+                  src={ResultadosVideo}
+                  type="video/mp4"
+                />
                 {/* <source
               src="./assets/images/bgpics/flowers.webm"
               type="video/webm"
@@ -286,6 +311,7 @@ const Fullpage = () => (
             </div>
 
             {/* SECTION 6 - NOTICIAS */}
+
             <div
               className="section section6"
               style={{ backgroundColor: "#000000" }}
@@ -308,7 +334,8 @@ const Fullpage = () => (
                       padding: "11px 22px 5px",
                     }}
                   >
-                    Blog de &nbsp;<strong>noticias</strong>
+                    Blog de &nbsp;
+                    <strong>noticias</strong>
                   </Button>
                 </Link>
                 <Typography

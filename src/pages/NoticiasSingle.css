@@ -1,0 +1,21 @@
+p {
+  margin-bottom: 1rem;
+  color: #f8f8f8;
+  text-align: justify;
+}
+ul,
+ol {
+  margin: 0px 0px 0.5rem;
+  padding: 0px 0px 0px 1rem;
+  color: #f8f8f8;
+}
+li {
+  margin-bottom: 0.5rem;
+  list-style-position: outside;
+  list-style-type: lower-roman;
+  text-align: justify;
+}
+
+.lowerlatin li {
+  list-style-type: lower-latin !important;
+}

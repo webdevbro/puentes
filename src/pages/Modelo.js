@@ -129,7 +129,7 @@ const Modelo = () => {
       </Grid>
       <Footer
         title="Puentes"
-        description='"mejores oportunidades laborales para los jóvenes, mayor empoderamiento económico de las comunidades vulnerables"'
+        description="Conectando Oportunidades para Jóvenes"
       ></Footer>
     </>
   );

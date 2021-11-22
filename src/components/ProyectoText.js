@@ -4,6 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => {
   return {
     divText: {
+      fontSize: "1rem",
+      textAlign: "justify",
       "& p": {
         marginBottom: "1rem",
       },
@@ -13,8 +15,13 @@ const useStyles = makeStyles((theme) => {
       },
       "& ul": {
         marginBottom: "1rem",
+        marginLeft: "2rem",
       },
       "& ul li": {
+        marginBottom: "0.5rem",
+        listStyle: "disc",
+      },
+      "& ol li": {
         marginBottom: "0.5rem",
       },
     },
@@ -64,7 +71,11 @@ const ProyectoText = () => {
         vínculos urbano-rurales con los sectores de la
         gastronomía y la hostelería.
       </p>
-      <p>Las principales actividades incluyen: </p>
+      <p>
+        <strong>
+          Las principales actividades incluyen:{" "}
+        </strong>
+      </p>
       <ul>
         <li>
           Capacitación en redes, plataformas, aplicaciones y
@@ -95,8 +106,12 @@ const ProyectoText = () => {
           los países en los que se implementa el programa.
         </li>
       </ul>
-      <p>Los resultados esperados del proyecto son:</p>
-      <ol class="lowerlatin">
+      <p>
+        <strong>
+          Los resultados esperados del proyecto son:
+        </strong>
+      </p>
+      <ul>
         <li>
           1.050 jóvenes beneficiarios directos del proyecto
           capacitados en el conocimiento, uso y desarrollo
@@ -131,15 +146,17 @@ const ProyectoText = () => {
           a niveles más amplios por parte del FIDA y otros
           programas del sector público y privado.
         </li>
-      </ol>
+      </ul>
       <p>
-        Con este proyecto se fomentan nuevas conexiones
-        entre el medio rural y las ciudades que se
-        traducirán en mejores oportunidades laborales para
-        los jóvenes, mayor empoderamiento económico de las
-        comunidades vulnerables y un fortalecimiento de los
-        sistemas agroalimentarios orientados a resiliencia
-        climática y seguridad alimentaria.
+        <strong>
+          Con este proyecto se fomentan nuevas conexiones
+          entre el medio rural y las ciudades que se
+          traducirán en mejores oportunidades laborales para
+          los jóvenes, mayor empoderamiento económico de las
+          comunidades vulnerables y un fortalecimiento de
+          los sistemas agroalimentarios orientados a
+          resiliencia climática y seguridad alimentaria.
+        </strong>
       </p>
     </div>
   );

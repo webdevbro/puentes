@@ -72,10 +72,7 @@ const Proyecto = () => {
         >
           <CssBaseline />
           <div className={classes.article}>
-            <div
-              maxWidth="lg"
-              className={classes.logoLinkCont}
-            >
+            <div className={classes.logoLinkCont}>
               <Link to="/">
                 <img
                   className={classes.logoLink}
@@ -120,21 +117,14 @@ const Proyecto = () => {
           </Container>
         </Grid>
         <div className={classes.copy}>
-          <Container maxWidth="md">
-            <Typography
-              variant="body1"
-              color="textPrimary"
-              paragraph={true}
-              align="justify"
-            >
-              <ProyectoText paragraph={true} />
-            </Typography>
+          <Container maxWidth="sm">
+            <ProyectoText />
           </Container>
         </div>
       </Grid>
       <Footer
         title="Puentes"
-        description='"mejores oportunidades laborales para los jóvenes, mayor empoderamiento económico de las comunidades vulnerables"'
+        description="Conectando Oportunidades para Jóvenes"
       ></Footer>
     </>
   );

@@ -25,6 +25,14 @@ const useStyles = makeStyles((theme) => {
         marginLeft: theme.spacing(2),
       },
     },
+    contentCont: {
+      display: "flex",
+      flexDirection: "column",
+      minHeight: "100vh !important",
+    },
+    mainContent: {
+      flex: "auto",
+    },
   };
 });
 
@@ -57,6 +65,7 @@ const ARTICLES = gql`
       title
       excerpt
       published_at
+      createdDate
       slug
       featimage {
         url
@@ -77,13 +86,15 @@ const Noticias = () => {
       </div>
     );
   if (error) return <p>Error :(</p>;
-  console.log(data);
+
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="lg">
+      <Container
+        maxWidth="lg"
+        className={classes.contentCont}>
         <Header title="Noticias" sections={sections} />
-        <main>
+        <main className={classes.mainContent}>
           <MainFeaturedPost
             post={mainFeaturedPost}
             title="Blog de Noticias"
@@ -99,11 +110,10 @@ const Noticias = () => {
             })}
           </Grid>
         </main>
+        <Footer
+          title="Puentes"
+          description="Conectando Oportunidades para Jóvenes"></Footer>
       </Container>
-      <Footer
-        title="Puentes"
-        description='"mejores oportunidades laborales para los jóvenes, mayor empoderamiento económico de las comunidades vulnerables"'
-      ></Footer>
     </React.Fragment>
   );
 };

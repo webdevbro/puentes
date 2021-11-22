@@ -16,6 +16,15 @@ const useStyles = makeStyles((theme) => {
         },
       },
     },
+    body: {
+      "& ol": {
+        marginLeft: "1rem",
+        "& li": {
+          listStyle: "disc",
+          marginBottom: "1rem",
+        },
+      },
+    },
   };
 });
 
@@ -34,7 +43,9 @@ export default function Main(props) {
         className={classes.paraStyles}
         style={{ marginTop: "2rem", textAlign: "justify" }}
       >
-        <ReactMarkdown>{article.body}</ReactMarkdown>
+        <ReactMarkdown className={classes.body}>
+          {article.body}
+        </ReactMarkdown>
       </Typography>
     </Grid>
   );

@@ -16,6 +16,7 @@ import Modelo from "./pages/Modelo";
 import Contacto from "./pages/Contact";
 import Historias from "./pages/Historias";
 import Noticias from "./pages/Noticias";
+import NotFound from "./pages/NotFound";
 import NoticiasSingle from "./pages/NoticiasSingle";
 import Category from "./pages/Category";
 import Layout from "./components/Layout";
@@ -34,8 +35,8 @@ import "./App.css";
 
 const theme = createTheme({
   palette: {
-    primary: indigo,
-    secondary: green,
+    primary: green,
+    secondary: indigo,
     info: cyan,
     warning: pink,
     success: teal,
@@ -51,8 +52,8 @@ const theme = createTheme({
 
 /* APOLLO CLIENT */
 const client = new ApolloClient({
-  uri: "http://localhost:1337/graphql",
-  /* uri: "https://puentesbackend.herokuapp.com/graphql", */
+  /* uri: "http://localhost:1337/graphql", */
+  uri: "https://puentesbackend.herokuapp.com/graphql",
   cache: new InMemoryCache(),
 });
 
@@ -81,11 +82,14 @@ const App = () => {
               <Route path="/noticias">
                 <Noticias />
               </Route>
-              <Route path="/noticia/:id">
+              <Route path="/noticia/:slug">
                 <NoticiasSingle />
               </Route>
               <Route path="/category/:id">
                 <Category />
+              </Route>
+              <Route path="*">
+                <NotFound />
               </Route>
             </Switch>
           </Layout>

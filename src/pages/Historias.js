@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Fab from "@material-ui/core/Fab";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
 import OpenDialog from "../components/OpenDialog";
+import logoPuentes from "../assets/img/puentes-logo-solo.png";
 
 import "./Fullpage.css";
+import "./Historias.css";
 
 const Historias = () => (
   <>
@@ -20,10 +23,20 @@ const Historias = () => (
         return (
           <ReactFullpage.Wrapper>
             {/* HISTORIA 1 */}
+
             <div
               className="section section10"
               style={{ backgroundColor: "#000000" }}
             >
+              <div className="logoLinkCont">
+                <Link to="/">
+                  <img
+                    className="logoLink"
+                    src={logoPuentes}
+                    alt="Logo Puentes"
+                  />
+                </Link>
+              </div>
               <div className="historiaCont">
                 <OpenDialog
                   embedId="Tj9ZY-4QmxI?rel=0"
@@ -34,7 +47,9 @@ const Historias = () => (
                   <Fab
                     variant="extended"
                     style={{ backgroundColor: "#c8e6c998" }}
-                    onClick={() => fullpageApi.moveSectionDown()}
+                    onClick={() =>
+                      fullpageApi.moveSectionDown()
+                    }
                   >
                     <ImportExportIcon className="navIcon" />
                   </Fab>
@@ -43,10 +58,20 @@ const Historias = () => (
             </div>
 
             {/* HISTORIA 2*/}
+
             <div
               className="section section11"
               style={{ backgroundColor: "#000000" }}
             >
+              <div className="logoLinkCont">
+                <Link to="/">
+                  <img
+                    className="logoLink"
+                    src={logoPuentes}
+                    alt="Logo Puentes"
+                  />
+                </Link>
+              </div>
               <div className="historiaCont">
                 <OpenDialog
                   embedId="tvu-ThgY_oQ?rel=0"
@@ -57,7 +82,9 @@ const Historias = () => (
                   <Fab
                     variant="extended"
                     style={{ backgroundColor: "#c8e6c998" }}
-                    onClick={() => fullpageApi.moveSectionDown()}
+                    onClick={() =>
+                      fullpageApi.moveSectionDown()
+                    }
                   >
                     <ImportExportIcon className="navIcon" />
                   </Fab>
@@ -66,10 +93,20 @@ const Historias = () => (
             </div>
 
             {/* HISTORIA 3*/}
+
             <div
               className="section section12"
               style={{ backgroundColor: "#000000" }}
             >
+              <div className="logoLinkCont">
+                <Link to="/">
+                  <img
+                    className="logoLink"
+                    src={logoPuentes}
+                    alt="Logo Puentes"
+                  />
+                </Link>
+              </div>
               <div className="historiaCont">
                 <OpenDialog
                   embedId="9CSewgE4VVU?rel=0"

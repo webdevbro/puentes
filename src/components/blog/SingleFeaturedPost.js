@@ -1,12 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Paper,
-  Typography,
-  Grid,
-  Link,
-} from "@material-ui/core";
+import { Paper, Typography, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -48,8 +43,7 @@ const SingleFeaturedPost = (props) => {
       className={classes.mainFeaturedPost}
       style={{
         backgroundImage: `url(${data.featimage.url})`,
-      }}
-    >
+      }}>
       <img
         src={data.featimage.url}
         alt="test"
@@ -63,15 +57,13 @@ const SingleFeaturedPost = (props) => {
               component="h1"
               variant="h3"
               color="inherit"
-              gutterBottom
-            >
+              gutterBottom>
               {data.title}
             </Typography>
             <Typography
               variant="h5"
               color="inherit"
-              paragraph
-            >
+              paragraph>
               {data.excerpt}
             </Typography>
           </div>

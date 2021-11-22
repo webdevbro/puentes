@@ -26,6 +26,14 @@ const useStyles = makeStyles((theme) => {
         marginLeft: theme.spacing(2),
       },
     },
+    contentCont: {
+      display: "flex",
+      flexDirection: "column",
+      minHeight: "100vh !important",
+    },
+    mainContent: {
+      flex: "auto",
+    },
   };
 });
 
@@ -81,9 +89,12 @@ const Category = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="lg">
+      <Container
+        maxWidth="lg"
+        className={classes.contentCont}
+      >
         <Header title="Noticias" />
-        <main>
+        <main className={classes.mainContent}>
           <MainFeaturedPost
             post={mainFeaturedPost}
             title={`Noticias de ${data.category.name}`}
@@ -99,11 +110,11 @@ const Category = () => {
             })}
           </Grid>
         </main>
+        <Footer
+          title="Puentes"
+          description="Conectando Oportunidades para Jóvenes"
+        ></Footer>
       </Container>
-      <Footer
-        title="Puentes"
-        description='"mejores oportunidades laborales para los jóvenes, mayor empoderamiento económico de las comunidades vulnerables"'
-      ></Footer>
     </React.Fragment>
   );
 };

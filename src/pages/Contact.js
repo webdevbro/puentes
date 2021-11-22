@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   logoLink: {
     width: "50px",
     position: "absolute",
-    top: "-0.5rem",
+    top: "-1rem",
     left: "10px",
   },
 }));
@@ -58,7 +58,7 @@ const Contacto = () => {
         >
           <Container maxWidth="lg">
             <div className={classes.article}>
-              <div className="classes.logoLinkCont">
+              <div className={classes.logoLinkCont}>
                 <Link to="/">
                   <img
                     className={classes.logoLink}
@@ -104,7 +104,7 @@ const Contacto = () => {
       </Grid>
       <Footer
         title="Puentes"
-        description='"mejores oportunidades laborales para los jóvenes, mayor empoderamiento económico de las comunidades vulnerables"'
+        description="Conectando Oportunidades para Jóvenes"
       ></Footer>
     </>
   );

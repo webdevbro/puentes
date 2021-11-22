@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useQuery, gql } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
-import useFetch from "../../hooks/useFetch";
 import {
   Grid,
   Paper,
@@ -28,10 +28,8 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
-/* REST API QUERY */
-
 /* GRAPHQL QUERY */
-/* const FEATNEWS = gql`
+const FEATNEWS = gql`
   query getFeatNews {
     articles {
       id
@@ -43,14 +41,12 @@ const useStyles = makeStyles((theme) => {
       }
     }
   }
-`; */
+`;
 
 const Sidebar = (props) => {
   const classes = useStyles();
   const { description, social, title } = props;
-  const { loading, error, data } = useFetch(
-    "https://puentesbackend.herokuapp.com/articles",
-  );
+  const { loading, error, data } = useQuery(FEATNEWS);
 
   if (loading)
     return (
@@ -61,13 +57,12 @@ const Sidebar = (props) => {
   if (error) return <p>Error :(</p>;
   console.log(data);
 
-  const newData = data.slice(-5).reverse();
-
   return (
     <Grid item xs={12} md={4}>
       <Paper
         elevation={0}
-        className={classes.sidebarAboutBox}>
+        className={classes.sidebarAboutBox}
+      >
         <Typography variant="h6" gutterBottom>
           {title}
         </Typography>
@@ -76,22 +71,26 @@ const Sidebar = (props) => {
       <Typography
         variant="h6"
         gutterBottom
-        className={classes.sidebarSection}>
+        className={classes.sidebarSection}
+      >
         Otras Noticias
       </Typography>
       <List
         component="nav"
-        aria-label="secondary mailbox folders">
-        {newData.map((article) => {
+        aria-label="secondary mailbox folders"
+      >
+        {data.articles.map((article) => {
           return (
             <Link
               display="block"
               variant="body1"
-              to={`/noticia/${article.slug}`}
-              key={article.id}>
+              to={`/noticia/${article.id}`}
+              key={article.id}
+            >
               <ListItem
                 button
-                style={{ padding: "11px 22px 5px" }}>
+                style={{ padding: "11px 22px 5px" }}
+              >
                 <ListItemText
                   primary={article.title}
                   className={classes.links}
@@ -104,7 +103,8 @@ const Sidebar = (props) => {
       <Typography
         variant="h6"
         gutterBottom
-        className={classes.sidebarSection}>
+        className={classes.sidebarSection}
+      >
         Social
       </Typography>
       {social.map((network) => {
@@ -113,12 +113,14 @@ const Sidebar = (props) => {
             display="block"
             variant="body1"
             href="#"
-            key={network.id}>
+            key={network.id}
+          >
             <Grid
               container
               direction="row"
               spacing={1}
-              alignItems="center">
+              alignItems="center"
+            >
               <Grid item className={classes.links}>
                 <network.icon />
               </Grid>

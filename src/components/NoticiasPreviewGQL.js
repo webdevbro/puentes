@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-/* import { useQuery, gql } from "@apollo/client"; */
-import useFetch from "../hooks/useFetch";
-
-/* MATERIAL UI */
+import { useQuery, gql } from "@apollo/client";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -54,7 +51,7 @@ const cards = [
 ];
 
 /* GRAPHQL QUERY */
-/* const ARTICLESPREV = gql`
+const ARTICLESPREV = gql`
   query GetArticlesPrev {
     articles(limit: 3) {
       id
@@ -66,14 +63,12 @@ const cards = [
       }
     }
   }
-`; */
+`;
 
 const NoticiasPreview = () => {
   const classes = useStyles();
   /* query data */
-  const { loading, error, data } = useFetch(
-    "https://puentesbackend.herokuapp.com/articles",
-  );
+  const { loading, error, data } = useQuery(ARTICLESPREV);
 
   if (loading)
     return (
@@ -81,21 +76,20 @@ const NoticiasPreview = () => {
         <CircularProgress color="inherit" />
       </div>
     );
-  if (error) return <p>Error :(</p>;
-
-  const newData = data.slice(-3).reverse();
+  if (error) return <p>Error :(!!!</p>;
 
   return (
     <div>
       <Container className={classes.cardGrid} maxWidth="md">
         <Grid container spacing={4}>
-          {newData.map((article) => (
+          {data.articles.map((article) => (
             <Grid
               item
               key={article.id}
               sm={6}
               md={4}
-              lg={4}>
+              lg={4}
+            >
               <Card className="card">
                 <CardMedia
                   className="cardMedia"
@@ -111,16 +105,19 @@ const NoticiasPreview = () => {
                       lineHeight: "1.1",
                       marginBottom: "1rem",
                       fontSize: "1.1rem",
-                    }}>
+                    }}
+                  >
                     {article.title}
                   </Typography>
-
+                  <Typography variant="body2">
+                    {article.createdDate}
+                  </Typography>
                   <Typography variant="body2">
                     {article.excerpt}
                   </Typography>
                 </CardContent>
                 <CardActions className="cardFooter">
-                  <Link to={`/noticia/${article.slug}`}>
+                  <Link to={`/noticia/${article.id}`}>
                     <Button size="medium">Leer</Button>
                   </Link>
                 </CardActions>
